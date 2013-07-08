@@ -11,7 +11,7 @@
  * UTF-8 以外では意図しない動作になることがある。
  * $encoding utf8の認識パターン例：utf8, uTf8, utf-8, UtF-8
  */
-function jp_hyphenation($str , $width , $encoding = NULL)
+function jp_hyphenation($str , $width , $encoding = "UTF-8")
 {
 
   // 変数の存在及びnull確認 mixed

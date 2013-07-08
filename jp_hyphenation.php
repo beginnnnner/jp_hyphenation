@@ -82,12 +82,12 @@ function jp_hyphenation($str , $width , $encoding = "UTF-8")
 		*/
 
 		//禁則パターン配列を元に分割判定、
-		$divi = TRUE;
+		$split = TRUE;
 		foreach ($pattern as $hyp) {
-			$divi = $divi && ($hyp[0] === mb_ereg_match($hyp[1] , $eb , $hyp[2]));
+			$split = $split && ($hyp[0] === mb_ereg_match($hyp[1] , $eb , $hyp[2]));
 		}
 
-		if ($divi) {
+		if ($split) {
 			//分割処理、分割して戻り値配列へ格納する、文字数も格納
 			$res         = mb_substr($str , 0 , $p + 1);
 			$result[$no] = array($res , mb_strlen($res));
